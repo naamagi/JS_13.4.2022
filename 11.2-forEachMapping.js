@@ -40,7 +40,7 @@ console.log("**********4**************");
 const sentence = "Be Yourself; Everyone Else is Already Taken.";
 
 function vowelCount(str) {
-  let vowelObj = { a: 0, e: 0, i: 0, o: 0, u: 0 };
+  let vowelObj = {};
   let strArr = str.toLowerCase().split("");
   strArr.forEach(function (letter) {
     if (
@@ -50,7 +50,11 @@ function vowelCount(str) {
       letter === "o" ||
       letter === "u"
     ) {
-      vowelObj[letter] += 1;
+      if (vowelObj[letter]) {
+        vowelObj[letter] += 1;
+      } else {
+        vowelObj[letter] = 1;
+      }
     }
   });
   return vowelObj;
@@ -69,8 +73,7 @@ function capitalize(str) {
 
 console.log(capitalize(sentence));
 
-
-// 6 
+// 6
 console.log("**********6**************");
 function shiftLetters(str) {
   let lettersArr = str.split("");
