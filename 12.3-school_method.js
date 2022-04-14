@@ -39,7 +39,8 @@ const school = {
   ],
 };
 
-//    1. 
+//    1.
+console.log("*******1********");
 
 function findPerson(type, id) {
   if (type !== "student" && type !== "teacher") {
@@ -55,14 +56,14 @@ console.log(findPerson("student", 12));
 console.log(findPerson("teacher", 2));
 console.log(findPerson("alien", 2));
 
-//2. 
-
-
+//2.
+console.log("*******2********");
 function assignStudent(id, subject) {
   let teachersArray = school.teachers;
-  let studentById = school.students.find((student) => student.id === id);
+  let studentById = findPerson("student", id);
   let availableTeacher = teachersArray.find(
-    (teacher) =>( teacher.subjects.includes(subject) &&    teacher.capacityLeft > 0  ));
+    (teacher) => teacher.subjects.includes(subject) && teacher.capacityLeft > 0
+  );
   if (availableTeacher === undefined) {
     console.log("Sorry,no available teachers left");
   } else {
@@ -71,27 +72,29 @@ function assignStudent(id, subject) {
   }
 }
 
-assignStudent(10,"ethics");
-assignStudent(12,"biology");
+assignStudent(10, "ethics");
+assignStudent(12, "biology");
 console.log(school.teachers[0]);
 console.log(school.teachers[1]);
-assignStudent(13,"Geography");
+assignStudent(13, "Geography");
 console.log(school.teachers[0]);
 console.log(school.teachers[1]);
 
-//3 
+//3
+console.log("*******3********");
 
 function assignTeachersSubject(teacherId, newSubject) {
-  let teacherById = school.teachers.find((teacher) => teacher.id === teacherId);
-  let existingSubject= teacherById.subjects.find((subject) => subject === newSubject);
-  if (existingSubject===null) {
+  let teacherById = findPerson("teacher", teacherId);
+  let existingSubject = teacherById.subjects.find(
+    (subject) => subject === newSubject
+  );
+  if (existingSubject === undefined) {
     teacherById.subjects.push(newSubject);
   }
 }
 
-// (assignTeachersSubject(2,"geography"));
-// // console.log(school.teachers.subjects);
-// console.log(findPerson("teacher", 2));
+assignTeachersSubject(2, "geography");
+console.log(findPerson("teacher", 2));
 
-// (assignTeachersSubject(2,"history"));
-// console.log(school.teachers.subjects);
+assignTeachersSubject(2, "history");
+console.log(findPerson("teacher", 2));

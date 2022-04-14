@@ -16,8 +16,7 @@ const candyStore = {
   cashRegister: 200,
 };
 
-// 1. Implement the following getCandy function:
-// The function should return the candy element with the specified id.
+// 1. 
 
 function getCandy(candyStore, id) {
   const candiesArray = candyStore.candies;
@@ -25,9 +24,7 @@ function getCandy(candyStore, id) {
 }
 console.log(getCandy(candyStore, "5hd7y"));
 
-// 2. Implement the following getPrice function:
-// The function should return the price (number) of the candy with the specified
-// id.
+// 2. 
 
 function getPrice(candyStore, id) {
   const desiredCandy = getCandy(candyStore, id);
@@ -35,9 +32,7 @@ function getPrice(candyStore, id) {
 }
 console.log(getPrice(candyStore, "5hd7y"));
 
-// 3. Implement the following addCandy function:
-// The function should add a new candy to the candy list in candyStore with a
-// default amount of 1. The function will not return anything.
+// 3. 
 
 function addCandy(candyStore, id, name, price) {
   const candiesArray = candyStore.candies;
@@ -47,10 +42,7 @@ function addCandy(candyStore, id, name, price) {
 addCandy(candyStore, "abc12", "Toffee", 15);
 console.log(candyStore);
 
-// 4. Implement the following buy function: The function should add the candy
-// price to the cashRegister, and decrease the amount property of the relevant
-// candy.
-
+// 4. 
 function buy(candyStore, id) {
   const candyPrice = getPrice(candyStore, id);
   candyStore.cashRegister += candyPrice;
