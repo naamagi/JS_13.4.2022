@@ -98,3 +98,13 @@ console.log(findPerson("teacher", 2));
 
 assignTeachersSubject(2, "history");
 console.log(findPerson("teacher", 2));
+
+//4
+
+function findTeacherCapacity(id) {
+  let teacherById = findPerson("teacher", id);
+  return teacherById.capacityLeft;
+}
+
+console.log("capacity of teacher 1:" + findTeacherCapacity(1));
+console.log("capacity of teacher 2:" + findTeacherCapacity(2));
