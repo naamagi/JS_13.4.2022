@@ -55,27 +55,29 @@ console.log(findPerson("student", 12));
 console.log(findPerson("teacher", 2));
 console.log(findPerson("alien", 2));
 
-//2.
+//2. 
 
-// function assignStudent(id, subject) {
-//   let teachersArray = school.teachers;
-//   let studentById = school.students.find((student) => student.id === id);
-//   let availableTeacher = teachersArray.find(
-//     (teacher) =>( teacher.subjects.includes(subject) &&    teacher.capacityLeft > 0  ));
-//   if (availableTeacher === null) {
-//     console.log("Sorry,no available teachers left");
-//   } else {
-//     availableTeacher.students.push(studentById);
-//     availableTeacher.capacityLeft--;
-//   }
-// }
 
-// console.log(assignStudent(10,"ethics"));
-// console.log(school);
-// console.log(assignStudent(12,"biology"));
-// console.log(school);
-// console.log(assignStudent(13,"Geography"));
-// console.log(school);
+function assignStudent(id, subject) {
+  let teachersArray = school.teachers;
+  let studentById = school.students.find((student) => student.id === id);
+  let availableTeacher = teachersArray.find(
+    (teacher) =>( teacher.subjects.includes(subject) &&    teacher.capacityLeft > 0  ));
+  if (availableTeacher === undefined) {
+    console.log("Sorry,no available teachers left");
+  } else {
+    availableTeacher.students.push(studentById);
+    availableTeacher.capacityLeft--;
+  }
+}
+
+assignStudent(10,"ethics");
+assignStudent(12,"biology");
+console.log(school.teachers[0]);
+console.log(school.teachers[1]);
+assignStudent(13,"Geography");
+console.log(school.teachers[0]);
+console.log(school.teachers[1]);
 
 //3 
 
