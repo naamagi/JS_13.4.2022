@@ -1,6 +1,5 @@
-
-
 // 1
+console.log("**********1**************");
 const intArray = [3, 6, 2, 1, 66, 23, 12];
 
 function doubleValues(arr) {
@@ -11,7 +10,7 @@ function doubleValues(arr) {
 console.log(doubleValues(intArray));
 
 // 2
-
+console.log("**********2**************");
 function onlyEvenValues(arr) {
   let newArr = [];
   arr.forEach(function (number) {
@@ -24,7 +23,7 @@ function onlyEvenValues(arr) {
 console.log(onlyEvenValues(intArray));
 
 // 3
-
+console.log("**********3**************");
 function showFirstAndLast(arr) {
   let newArr = [];
   let newArr2 = [];
@@ -37,7 +36,7 @@ function showFirstAndLast(arr) {
 console.log(showFirstAndLast(intArray));
 
 // 4
-
+console.log("**********4**************");
 const sentence = "Be Yourself; Everyone Else is Already Taken.";
 
 function vowelCount(str) {
@@ -59,6 +58,7 @@ function vowelCount(str) {
 console.log(vowelCount(sentence));
 
 // 5
+console.log("**********5**************");
 function capitalize(str) {
   let strArr = str.split("");
   let capitalizedArr = strArr.map(function (letter) {
@@ -69,14 +69,31 @@ function capitalize(str) {
 
 console.log(capitalize(sentence));
 
-// 6
+
+// 6 
+console.log("**********6**************");
+function shiftLetters(str) {
+  let lettersArr = str.split("");
+  let shiftedLettersStr = lettersArr.map(function (letter) {
+    const code = letter.charCodeAt(0);
+    if ((code > 65 && code <= 90) || (code > 97 && code <= 122)) {
+      return String.fromCharCode(code - 1);
+    } else if (code === 65) {
+      return String.fromCharCode(90);
+    } else if (code === 97) {
+      return String.fromCharCode(122);
+    } else return String.fromCharCode(code);
+  });
+  return shiftedLettersStr.join("");
+}
+console.log(shiftLetters(sentence));
 
 // 7
-
+console.log("**********7**************");
 function swapCase(str) {
   let strArr = str.split(" ");
   let shiftedLettersStr = strArr.map(function (word, index) {
-    if (index % 2 === 0) {
+    if (index % 2 === 1) {
       return capitalize(word);
     }
     return word;
